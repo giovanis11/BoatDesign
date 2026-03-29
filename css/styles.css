@@ -32,6 +32,10 @@ body {
   font-feature-settings: "liga" 1, "kern" 1;
 }
 
+body.page-loading {
+  overflow: hidden;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -43,6 +47,61 @@ a {
 
 section {
   position: relative;
+}
+
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+  background:
+    radial-gradient(circle at top, rgba(124, 194, 235, 0.18), transparent 30%),
+    linear-gradient(180deg, rgba(4, 22, 40, 0.98), rgba(8, 35, 61, 0.98));
+  color: rgba(255, 255, 255, 0.78);
+  transition: opacity 0.45s ease, visibility 0.45s ease;
+}
+
+.page-loader p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.page-loader-mark {
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background:
+    linear-gradient(135deg, rgba(124, 194, 235, 0.2), rgba(255, 255, 255, 0.06));
+  box-shadow: 0 24px 55px rgba(4, 22, 40, 0.26);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-loader-mark::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.82);
+  border-right-color: transparent;
+  animation: loader-spin 0.9s linear infinite;
+}
+
+.page-loader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@keyframes loader-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .section-padding {
@@ -183,9 +242,10 @@ section {
 .hero-section {
   min-height: 100vh;
   position: relative;
+  background-color: var(--navy-950);
   background:
     linear-gradient(120deg, rgba(4, 22, 40, 0.84) 8%, rgba(8, 35, 61, 0.56) 44%, rgba(12, 59, 92, 0.2) 100%),
-    url("../images/hero-1800.jpg") center/cover no-repeat;
+    url("../images/hero-1400.jpg") center/cover no-repeat;
   overflow: hidden;
 }
 

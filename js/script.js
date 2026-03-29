@@ -8,10 +8,60 @@ document.addEventListener("DOMContentLoaded", () => {
   const currentYear = document.getElementById("currentYear");
   const navbarCollapse = document.getElementById("navbarContent");
   const mobileMenuMedia = window.matchMedia("(max-width: 991.98px)");
+  const pageLoader = document.getElementById("pageLoader");
   const contactForm = document.querySelector(".contact-form");
   const contactSubmitButton = document.getElementById("contactSubmitButton");
   const contactFormStatus = document.getElementById("contactFormStatus");
   const preferredDateInput = document.getElementById("date");
+
+  const hidePageLoader = () => {
+    if (!pageLoader) {
+      return;
+    }
+
+    pageLoader.classList.add("is-hidden");
+    document.body.classList.remove("page-loading");
+
+    window.setTimeout(() => {
+      pageLoader.remove();
+    }, 500);
+  };
+
+  const preloadPageImages = async () => {
+    const imageSources = new Set();
+
+    document.querySelectorAll("img").forEach((image) => {
+      const source = image.currentSrc || image.getAttribute("src");
+
+      if (source) {
+        imageSources.add(source);
+      }
+    });
+
+    const heroSection = document.querySelector(".hero-section");
+
+    if (heroSection) {
+      const backgroundImage = window.getComputedStyle(heroSection).backgroundImage;
+      const backgroundMatch = backgroundImage.match(/url\(["']?(.*?)["']?\)/);
+
+      if (backgroundMatch?.[1]) {
+        imageSources.add(backgroundMatch[1]);
+      }
+    }
+
+    const preloadJobs = Array.from(imageSources).map(
+      (source) =>
+        new Promise((resolve) => {
+          const image = new Image();
+          image.onload = resolve;
+          image.onerror = resolve;
+          image.src = source;
+        })
+    );
+
+    await Promise.allSettled(preloadJobs);
+    hidePageLoader();
+  };
 
   const formatPreferredDate = (dateValue) => {
     if (!dateValue) {
@@ -80,6 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   setupContactForm();
+  preloadPageImages();
 
   const updateNavbar = () => {
     if (!navbar) {

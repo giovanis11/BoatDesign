@@ -19,6 +19,7 @@
   <meta name="twitter:title" content="Zakynthos Boat Rental & Luxury Cruises | Azure Wake Zante">
   <meta name="twitter:description" content="Private Zakynthos boat cruises to Navagio, the Blue Caves, Marathonisi, and more.">
   <meta name="twitter:image" content="https://images.pexels.com/photos/32863088/pexels-photo-32863088.jpeg?cs=srgb&dl=pexels-dan-aksel-jacobsen-2153708593-32863088.jpg&fm=jpg">
+  <link rel="preload" as="image" href="images/hero-1400.jpg" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -73,7 +74,11 @@
     }
   </script>
 </head>
-<body>
+<body class="page-loading">
+  <div class="page-loader" id="pageLoader" aria-hidden="true">
+    <div class="page-loader-mark"></div>
+    <p>Loading experience</p>
+  </div>
   <header id="home">
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" aria-label="Primary">
       <div class="container">
