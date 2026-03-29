@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap"
     rel="stylesheet"
   >
   <link
@@ -78,8 +78,8 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" aria-label="Primary">
       <div class="container">
         <a class="navbar-brand" href="#home">
-          <span class="brand-mark">Azure</span>
-          <span class="brand-text">Wake</span>
+          <span class="brand-mark">ZanteBlue</span>
+          <span class="brand-text"></span>
         </a>
         <button
           class="navbar-toggler border-0 shadow-none"
@@ -112,8 +112,8 @@
         <div class="row">
           <div class="col-lg-8 col-xl-7">
             <div class="hero-content reveal">
-              <p class="eyebrow">Zante yacht charters, Blue Caves tours, and Navagio escapes</p>
-              <h1 id="hero-heading">Luxury Boat Rental in Zakynthos</h1>
+              <p class="eyebrow">Zante Boat Charters</p>
+              <h1 id="hero-heading">Boat Rental in Zakynthos</h1>
               <p class="hero-subheading">
                 Discover Zante from the water with elegant private cruises to Navagio Beach, the Blue Caves, Marathonisi, Keri, and the most cinematic corners of the Ionian coastline.
               </p>
@@ -535,16 +535,6 @@
                   <input type="number" class="form-control" id="guests" name="guests" min="1" max="20" placeholder="2">
                 </div>
                 <div class="col-12">
-                  <label for="route" class="form-label">Preferred Route</label>
-                  <select class="form-control form-select" id="route" name="preferred-route">
-                    <option value="">Choose a cruise style</option>
-                    <option value="Navagio and Blue Caves">Navagio and Blue Caves</option>
-                    <option value="Marathonisi and turtle spotting">Marathonisi and turtle spotting</option>
-                    <option value="Sunset west coast cruise">Sunset west coast cruise</option>
-                    <option value="Custom itinerary">Custom itinerary</option>
-                  </select>
-                </div>
-                <div class="col-12">
                   <label for="message" class="form-label">Message</label>
                   <textarea
                     class="form-control"
@@ -555,9 +545,8 @@
                     required
                   ></textarea>
                 </div>
-                <div class="col-12 d-flex flex-column flex-sm-row gap-3 align-items-sm-center">
+                <div class="col-12">
                   <button type="submit" class="btn btn-primary">Send Inquiry</button>
-                  <span class="form-note">Your request will land in Netlify Forms and can forward to email once notifications are enabled in Netlify.</span>
                 </div>
               </div>
             </form>
