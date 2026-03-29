@@ -516,6 +516,42 @@ textarea.form-control {
   min-height: 160px;
 }
 
+.form-status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.5rem;
+  margin-top: 0.85rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.btn.is-submitting {
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.btn.is-success {
+  background: rgba(35, 133, 86, 0.12);
+  color: #238556;
+  box-shadow: none;
+}
+
+.btn.is-success:hover,
+.btn.is-success:focus {
+  color: #238556;
+  transform: none;
+  box-shadow: none;
+}
+
+.form-status.is-success {
+  color: #238556;
+}
+
+.form-status.is-error {
+  color: #c25151;
+}
+
 .thank-you-page {
   min-height: 100vh;
 }

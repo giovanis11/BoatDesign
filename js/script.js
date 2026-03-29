@@ -8,6 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const currentYear = document.getElementById("currentYear");
   const navbarCollapse = document.getElementById("navbarContent");
   const mobileMenuMedia = window.matchMedia("(max-width: 991.98px)");
+  const contactForm = document.querySelector(".contact-form");
+  const contactSubmitButton = document.getElementById("contactSubmitButton");
+  const contactFormStatus = document.getElementById("contactFormStatus");
+  const preferredDateInput = document.getElementById("date");
 
   const updateNavbar = () => {
     if (window.scrollY > 40) {
@@ -122,4 +126,68 @@ document.addEventListener("DOMContentLoaded", () => {
   if (currentYear) {
     currentYear.textContent = new Date().getFullYear();
   }
+
+  const formatPreferredDate = (dateValue) => {
+    if (!dateValue) {
+      return "";
+    }
+
+    const [year, month, day] = dateValue.split("-");
+
+    if (!year || !month || !day) {
+      return dateValue;
+    }
+
+    return `${day}/${month}/${year}`;
+  };
+
+  contactForm?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (!contactSubmitButton || !contactFormStatus) {
+      return;
+    }
+
+    const originalButtonLabel = "Send Inquiry";
+    const formData = new FormData(contactForm);
+    const formattedPreferredDate = formatPreferredDate(preferredDateInput?.value || "");
+
+    if (formattedPreferredDate) {
+      formData.set("preferred-date", formattedPreferredDate);
+    }
+
+    contactSubmitButton.disabled = true;
+    contactSubmitButton.classList.remove("is-success");
+    contactSubmitButton.classList.add("is-submitting");
+    contactSubmitButton.textContent = "Sending...";
+    contactFormStatus.className = "form-status";
+    contactFormStatus.textContent = "";
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error("Form submission failed");
+      }
+
+      contactForm.reset();
+      contactSubmitButton.classList.remove("is-submitting");
+      contactSubmitButton.classList.add("is-success");
+      contactSubmitButton.textContent = "Inquiry Sent";
+      contactFormStatus.className = "form-status is-success";
+      contactFormStatus.textContent = "Your message was sent successfully.";
+    } catch (error) {
+      contactSubmitButton.disabled = false;
+      contactSubmitButton.classList.remove("is-submitting");
+      contactSubmitButton.textContent = originalButtonLabel;
+      contactFormStatus.className = "form-status is-error";
+      contactFormStatus.textContent = "Something went wrong. Please try again.";
+    }
+  });
 });
