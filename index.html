@@ -494,23 +494,18 @@
           <div class="col-lg-7 reveal">
             <form
               class="contact-form"
-              name="booking"
               method="POST"
-              action="/thank-you.html"
-              data-netlify="true"
-              netlify-honeypot="bot-field"
+              action="https://formspree.io/f/mnjopwke"
             >
-              <input type="hidden" name="form-name" value="booking">
               <input
                 type="hidden"
                 name="subject"
-                value="New %{formName} inquiry from %{siteName}"
-                data-remove-prefix="true"
+                value="New Zakynthos cruise inquiry"
               >
               <p class="d-none">
                 <label>
                   Don’t fill this out if you’re human:
-                  <input name="bot-field">
+                  <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
                 </label>
               </p>
               <div class="row g-3">
