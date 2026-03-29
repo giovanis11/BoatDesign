@@ -185,7 +185,7 @@ section {
   position: relative;
   background:
     linear-gradient(120deg, rgba(4, 22, 40, 0.84) 8%, rgba(8, 35, 61, 0.56) 44%, rgba(12, 59, 92, 0.2) 100%),
-    url("https://images.pexels.com/photos/32863088/pexels-photo-32863088.jpeg?cs=srgb&dl=pexels-dan-aksel-jacobsen-2153708593-32863088.jpg&fm=jpg") center/cover no-repeat;
+    url("../images/hero-1800.jpg") center/cover no-repeat;
   overflow: hidden;
 }
 
