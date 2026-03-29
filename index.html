@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
   <link
@@ -496,11 +496,17 @@
               class="contact-form"
               name="booking"
               method="POST"
+              action="/thank-you.html"
               data-netlify="true"
               netlify-honeypot="bot-field"
             >
               <input type="hidden" name="form-name" value="booking">
-              <input type="hidden" name="subject" value="New cruise booking request">
+              <input
+                type="hidden"
+                name="subject"
+                value="New %{formName} inquiry from %{siteName}"
+                data-remove-prefix="true"
+              >
               <p class="d-none">
                 <label>
                   Don’t fill this out if you’re human:
@@ -510,11 +516,33 @@
               <div class="row g-3">
                 <div class="col-md-6">
                   <label for="name" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="name" name="name" placeholder="Your full name" required>
+                  <input type="text" class="form-control" id="name" name="name" autocomplete="name" placeholder="Your full name" required>
                 </div>
                 <div class="col-md-6">
                   <label for="email" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+                  <input type="email" class="form-control" id="email" name="email" autocomplete="email" placeholder="name@example.com" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="phone" class="form-label">Phone</label>
+                  <input type="tel" class="form-control" id="phone" name="phone" autocomplete="tel" placeholder="+30 69X XXX XXXX">
+                </div>
+                <div class="col-md-6">
+                  <label for="date" class="form-label">Preferred Date</label>
+                  <input type="date" class="form-control" id="date" name="preferred-date">
+                </div>
+                <div class="col-md-6">
+                  <label for="guests" class="form-label">Guests</label>
+                  <input type="number" class="form-control" id="guests" name="guests" min="1" max="20" placeholder="2">
+                </div>
+                <div class="col-12">
+                  <label for="route" class="form-label">Preferred Route</label>
+                  <select class="form-control form-select" id="route" name="preferred-route">
+                    <option value="">Choose a cruise style</option>
+                    <option value="Navagio and Blue Caves">Navagio and Blue Caves</option>
+                    <option value="Marathonisi and turtle spotting">Marathonisi and turtle spotting</option>
+                    <option value="Sunset west coast cruise">Sunset west coast cruise</option>
+                    <option value="Custom itinerary">Custom itinerary</option>
+                  </select>
                 </div>
                 <div class="col-12">
                   <label for="message" class="form-label">Message</label>
@@ -529,7 +557,7 @@
                 </div>
                 <div class="col-12 d-flex flex-column flex-sm-row gap-3 align-items-sm-center">
                   <button type="submit" class="btn btn-primary">Send Inquiry</button>
-                  <span class="form-note">Netlify-ready form with spam protection included.</span>
+                  <span class="form-note">Your request will land in Netlify Forms and can forward to email once notifications are enabled in Netlify.</span>
                 </div>
               </div>
             </form>
