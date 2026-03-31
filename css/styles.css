@@ -249,6 +249,17 @@ section {
   overflow: hidden;
 }
 
+.page-hero {
+  min-height: 88vh;
+  padding: 6rem 0 4rem;
+}
+
+.fleet-hero {
+  background:
+    linear-gradient(120deg, rgba(4, 22, 40, 0.9) 10%, rgba(8, 35, 61, 0.58) 48%, rgba(12, 59, 92, 0.22) 100%),
+    url("../images/baracuda-1200.jpg") center 34% / cover no-repeat;
+}
+
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -281,6 +292,95 @@ section {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+.fleet-hero-panel {
+  padding: 1.8rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.08)),
+    rgba(4, 22, 40, 0.46);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 28px;
+  box-shadow: 0 22px 54px rgba(4, 22, 40, 0.22);
+  color: var(--white);
+  backdrop-filter: blur(16px);
+}
+
+.fleet-panel-label {
+  margin-bottom: 1rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.fleet-panel-stat {
+  display: flex;
+  align-items: end;
+  gap: 0.8rem;
+  margin-bottom: 1.25rem;
+}
+
+.fleet-panel-stat strong {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 4.6rem);
+  line-height: 0.95;
+}
+
+.fleet-panel-stat span,
+.fleet-panel-note {
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.fleet-panel-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.fleet-panel-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.8rem 0.95rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  font-weight: 700;
+}
+
+.fleet-panel-list span {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.fleet-panel-list strong {
+  color: var(--blue-300);
+}
+
+.fleet-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.fleet-metric-card {
+  padding: 1.45rem;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--border-soft);
+  border-radius: 24px;
+  box-shadow: var(--shadow-card);
+}
+
+.fleet-metric-card strong {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-size: 1.5rem;
+  color: var(--navy-900);
+}
+
+.fleet-metric-card span {
+  color: var(--text-muted);
 }
 
 .btn-outline-light {
@@ -469,6 +569,281 @@ section {
 .gallery-caption {
   color: rgba(255, 255, 255, 0.82);
   font-size: 1rem;
+}
+
+.fleet-carousel-shell {
+  max-width: 1120px;
+  margin: 2.5rem auto 0;
+  padding: clamp(1rem, 2vw, 1.3rem);
+  background: linear-gradient(180deg, rgba(4, 22, 40, 0.96), rgba(8, 35, 61, 0.9));
+  border-radius: 32px;
+  box-shadow: 0 28px 70px rgba(4, 22, 40, 0.24);
+}
+
+.fleet-gallery-stack {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+#fleet-overview {
+  padding-top: 7rem;
+}
+
+.fleet-boat-section {
+  padding: clamp(1rem, 2vw, 1.35rem);
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(18, 69, 111, 0.08);
+  border-radius: 32px;
+  box-shadow: 0 24px 60px rgba(4, 22, 40, 0.08);
+}
+
+.fleet-copy-card {
+  height: 100%;
+  padding: clamp(1.5rem, 3vw, 2.1rem);
+  background:
+    radial-gradient(circle at top left, rgba(124, 194, 235, 0.16), transparent 46%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(245, 249, 253, 0.98));
+  border-radius: 26px;
+  border: 1px solid rgba(18, 69, 111, 0.08);
+}
+
+.fleet-boat-tag {
+  display: inline-block;
+  margin-bottom: 0.85rem;
+  color: var(--navy-700);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.fleet-copy-card h3 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--navy-900);
+  margin-bottom: 0.85rem;
+}
+
+.fleet-copy-card p {
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+}
+
+.fleet-inline-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 1.35rem;
+}
+
+.fleet-inline-specs span {
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(124, 194, 235, 0.14);
+  color: var(--navy-800);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.fleet-copy-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.fleet-copy-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--navy-800);
+  font-weight: 600;
+}
+
+.fleet-copy-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.55rem;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--blue-400);
+}
+
+.fleet-split-carousel-shell {
+  height: 100%;
+  padding: 0;
+  background: transparent;
+  border-radius: 26px;
+  box-shadow: none;
+}
+
+.fleet-boat-carousel {
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 24px 60px rgba(4, 22, 40, 0.16);
+}
+
+.fleet-boat-carousel .carousel-item img {
+  height: clamp(320px, 44vw, 520px);
+  object-fit: cover;
+  object-position: center;
+}
+
+.fleet-page-carousel {
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.fleet-page-carousel .carousel-item img {
+  height: clamp(420px, 65vw, 720px);
+  object-fit: cover;
+  object-position: center;
+}
+
+.fleet-carousel-asteria {
+  object-position: center 42%;
+}
+
+.fleet-carousel-caption {
+  right: 1.2rem;
+  bottom: 1.2rem;
+  left: 1.2rem;
+  padding: 1.15rem 1.2rem;
+  text-align: left;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(4, 22, 40, 0.16), rgba(4, 22, 40, 0.8));
+  backdrop-filter: blur(10px);
+}
+
+.fleet-carousel-caption h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  margin-bottom: 0.35rem;
+}
+
+.fleet-carousel-caption p {
+  margin-bottom: 0;
+  max-width: 48ch;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.fleet-carousel-kicker {
+  display: inline-block;
+  margin-bottom: 0.55rem;
+  color: var(--blue-300);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.fleet-spotlight-card {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 28px;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.fleet-spotlight-card.is-featured {
+  background:
+    linear-gradient(180deg, rgba(124, 194, 235, 0.12), rgba(255, 255, 255, 0.96) 28%);
+}
+
+.fleet-spotlight-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.fleet-spotlight-body {
+  padding: 1.75rem;
+}
+
+.fleet-spotlight-topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+  color: var(--navy-700);
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.fleet-spotlight-card h3 {
+  font-family: var(--font-display);
+  color: var(--navy-900);
+  margin-bottom: 0.85rem;
+}
+
+.fleet-spotlight-card p {
+  color: var(--text-muted);
+}
+
+.fleet-spotlight-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0 1.5rem;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.fleet-spotlight-list li {
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--navy-800);
+  font-weight: 600;
+}
+
+.fleet-spotlight-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--blue-400);
+  box-shadow: 0 0 0 6px rgba(124, 194, 235, 0.18);
+}
+
+.fleet-cta-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: clamp(1.7rem, 4vw, 2.5rem);
+  background:
+    radial-gradient(circle at top left, rgba(124, 194, 235, 0.2), transparent 34%),
+    rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--border-soft);
+  border-radius: 32px;
+  box-shadow: var(--shadow-soft);
+}
+
+.fleet-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.btn-outline-dark {
+  border: 1.5px solid rgba(8, 35, 61, 0.18);
+  color: var(--navy-900);
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.btn-outline-dark:hover,
+.btn-outline-dark:focus {
+  color: var(--navy-950);
+  border-color: rgba(8, 35, 61, 0.28);
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-2px);
 }
 
 .testimonial-carousel {
@@ -863,6 +1238,19 @@ textarea.form-control {
   .social-links {
     justify-content: flex-start;
   }
+
+  .fleet-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .fleet-cta-panel {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .fleet-boat-section {
+    padding: 1rem;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -893,6 +1281,23 @@ textarea.form-control {
 
   .fleet-meta {
     flex-direction: column;
+  }
+
+  .fleet-spotlight-topline {
+    flex-direction: column;
+  }
+
+  .fleet-carousel-caption {
+    position: static;
+    margin: 1rem;
+  }
+
+  .fleet-page-carousel .carousel-item img {
+    height: 360px;
+  }
+
+  .fleet-boat-carousel .carousel-item img {
+    height: 300px;
   }
 }
 
