@@ -355,6 +355,10 @@ section {
   object-fit: cover;
 }
 
+.fleet-image-asteria {
+  object-position: center 62%;
+}
+
 .service-card .card-body,
 .fleet-card .card-body {
   padding: 1.6rem;
