@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const preloadPageImages = async () => {
     const imageSources = new Set();
 
-    document.querySelectorAll("img").forEach((image) => {
+    document.querySelectorAll('img:not([loading="lazy"])').forEach((image) => {
       const source = image.currentSrc || image.getAttribute("src");
 
       if (source) {
@@ -59,7 +59,13 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     );
 
-    await Promise.allSettled(preloadJobs);
+    await Promise.race([
+      Promise.allSettled(preloadJobs),
+      new Promise((resolve) => {
+        window.setTimeout(resolve, 1500);
+      })
+    ]);
+
     hidePageLoader();
   };
 
