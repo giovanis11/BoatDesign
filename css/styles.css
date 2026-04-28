@@ -1084,6 +1084,13 @@ textarea.form-control {
   margin-top: 2rem;
   padding-top: 1.4rem;
   text-align: center;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.footer-credit {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.95rem;
 }
 
 .whatsapp-float {
