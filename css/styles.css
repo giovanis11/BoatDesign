@@ -465,7 +465,7 @@ section {
 }
 
 .service-card h3,
-.fleet-card .fleet-meta span:first-child {
+.fleet-card .fleet-meta:not(.fleet-price-meta) span:first-child {
   color: var(--navy-900);
 }
 
@@ -500,6 +500,21 @@ section {
 
 .fleet-meta span:last-child {
   color: var(--navy-700);
+}
+
+.fleet-price-meta {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: -0.35rem;
+  font-size: 0.9rem;
+}
+
+.fleet-price-meta span {
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(124, 194, 235, 0.14);
+  color: var(--navy-800);
 }
 
 .feature-list {
@@ -769,8 +784,9 @@ section {
 
 .fleet-spotlight-topline {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.45rem 0.75rem;
   margin-bottom: 0.9rem;
   color: var(--navy-700);
   font-size: 0.84rem;
